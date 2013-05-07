@@ -2,13 +2,15 @@ require 'bundler'
 
 Bundler.require :default, :development
 
-ActiveRecord::Base.establish_connection ENV['DATABASE_URL']
+task :environment do
+  ActiveRecord::Base.establish_connection ENV['DATABASE_URL']
 
-require './app/models/article'
+  require './app/models/article'
+end
 
 namespace :db do
   namespace :schema do
-    task :load do
+    task :load => :environment do
       load 'db/schema.rb'
     end
   end
