@@ -4,6 +4,7 @@ ruby '1.9.3'
 
 gem 'sinatra',         '~> 1.3.6'
 gem 'pg',              '~> 0.15.1'
+gem 'json',            '~> 1.7.7'
 gem 'activerecord',    '~> 3.2.13'
 gem 'thinking-sphinx', '~> 2.0',
   :git     => 'git://github.com/pat/thinking-sphinx.git',
