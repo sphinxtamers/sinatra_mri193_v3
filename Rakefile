@@ -2,6 +2,8 @@ require 'bundler'
 
 Bundler.require :default, :development
 
+require 'flying_sphinx/tasks'
+
 task :environment do
   ActiveRecord::Base.establish_connection ENV['DATABASE_URL']
 
