@@ -4,7 +4,7 @@ Bundler.require :default, :development
 
 ActiveRecord::Base.establish_connection ENV['DATABASE_URL']
 
-require 'app/models/article'
+require './app/models/article'
 
 namespace :db do
   namespace :schema do
