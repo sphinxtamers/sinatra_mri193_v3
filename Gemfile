@@ -11,8 +11,8 @@ gem 'thinking-sphinx', '~> 2.0',
   :branch  => 'v2',
   :ref     => '88f077db8e',
   :require => 'thinking_sphinx/sinatra'
-gem 'flying-sphinx',
-  :git     => 'git://github.com/flying-sphinx/flying-sphinx.git',
-  :branch  => 'master',
-  :ref     => '845c3e2cbe',
+gem 'flying-sphinx', '0.8.5',
+  # :git     => 'git://github.com/flying-sphinx/flying-sphinx.git',
+  # :branch  => 'master',
+  # :ref     => '845c3e2cbe',
   :require => 'flying_sphinx/sinatra'
