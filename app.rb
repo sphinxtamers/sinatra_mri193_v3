@@ -2,12 +2,7 @@ require 'bundler'
 
 Bundler.require :default, :development
 
-Sinatra::Application.environment = ENV['RACK_ENV'] || :development
-
-config = YAML.load(File.read('config/database.yml'))
-ActiveRecord::Base.establish_connection(
-  config[Sinatra::Application.environment.to_s]
-)
+ActiveRecord::Base.establish_connection ENV['DATABASE_URL']
 
 class MyApp < Sinatra::Base
   #
