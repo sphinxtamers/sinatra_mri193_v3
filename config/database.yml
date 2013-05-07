@@ -1,0 +1,4 @@
+development:
+  adapter:  postgresql
+  database: fs_sinatra_mri193
+  host:     localhost
