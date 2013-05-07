@@ -25,9 +25,8 @@ namespace :trainer do
       :body  => 'Lorem Ipsum and all that'
     )
 
-    system 'flying-sphinx configure'
-    system 'flying-sphinx index'
-    system 'flying-sphinx start'
+    Rake::Task['fs:index'].invoke
+    Rake::Task['fs:start'].invoke
   end
 
   task :test => :environment do
@@ -38,7 +37,7 @@ namespace :trainer do
     puts "Checking search match"
     raise "Search match failed"  if Article.search('lorem').first != article
 
-    system 'flying-sphinx rebuild'
+    Rake::Task['fs:rebuild'].invoke
 
     sleep 2
 
@@ -48,7 +47,5 @@ namespace :trainer do
     raise "Search match failed"  if Article.search('lorem').first != article
   end
 
-  task :cleanup => :environment do
-    system 'flying-sphinx stop'
-  end
+  task :cleanup => 'fs:stop'
 end
